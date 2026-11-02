@@ -259,7 +259,16 @@ public class Shop {
 	public void saveInventory() {
 		// TODO RA1-ISSUE-09: convertir cada Product en una linia i reescriure
 		// items.txt.
-		System.out.println("RA1-ISSUE-09 pendent: encara no s'ha desat l'inventari.");
+		File f = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "model" + File.separator + "files" + File.separator + ITEMS_FILE);
+		
+		try (PrintWriter pw = new PrintWriter(f)) {
+			for (Product producte : inventory) {
+				pw.println ("Item:" + producte.getName() + ";Wholesaler Price:" + producte.getWholesalerPrice().getValue() + ";Stock:" + producte.getStock() + ";");
+				}
+			System.out.println("Inventari actualitzat");
+			}catch (FileNotFoundException e) {
+				System.out.println("Error: No s'ha pogut actualitzar l'inventari");
+			}
 	}
 
 	/**
