@@ -216,15 +216,15 @@ public class Shop {
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Error: No es troba el fitxer items.txt");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error: No es pot llegir el fitxer items.txt");
 		}
 
 		// TODO RA1-ISSUE-04: delegar la conversio de cada linia a parseProductLine.
 		// TODO RA1-ISSUE-11: tractar fitxer absent o error de lectura amb un missatge
 		// comprensible.
-		System.out.println("RA1-ISSUE-03 pendent: encara no s'ha carregat " + f.getPath());
+		//System.out.println("RA1-ISSUE-03 pendent: encara no s'ha carregat " + f.getPath());
 	}
 
 	/**

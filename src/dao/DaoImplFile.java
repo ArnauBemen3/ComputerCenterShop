@@ -12,7 +12,7 @@ public class DaoImplFile implements Dao {
 
 	@Override
 	public void connect() {
-		usersFile = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "model" + File.separator + "files" + File.separator + "users.txt");
+		usersFile = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "model"+ File.separator + "files" + File.separator + "users.txt");
 	}
 
 	@Override
@@ -22,7 +22,9 @@ public class DaoImplFile implements Dao {
 
 	@Override
 	public Employee getEmployee(int employeeId, String password) {
+		
 		if (usersFile == null || !usersFile.exists()) {
+			System.out.println("Error: No es toba el fitxer users.txt");
 			return null;
 		}
 
